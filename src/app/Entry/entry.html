@@ -1,0 +1,148 @@
+<div style="display:flex; width:100%;">
+  
+  <div class="dx-field">
+    <div class="dx-field-label" style="width: 100px;">Add Row</div>
+  <dx-button id="button" 
+    height="28"
+    width="28"
+    icon="add"
+    type="normal"
+    (onClick)="addRow()">
+  </dx-button>
+  </div></div>
+  <div class="dx-field">
+    <div class="dx-field-label">Start Time</div>
+    <div class="dx-field-value" style="min-width: 100%;">
+      <dx-data-grid #grid
+              [dataSource]="gridDataSource"
+              [showColumnHeaders]="true"
+              [showColumnLines]="true"
+              [showRowLines]="false">
+    <dxo-load-panel [enabled]="false"></dxo-load-panel>
+    <dxo-scrolling mode="infinite"></dxo-scrolling>
+    <dxo-editing [allowUpdating]="true" [allowDeleting]="true" mode="cell"></dxo-editing>
+
+    <dxi-column  caption="Stat" dataField="startTime" editCellTemplate="cellNamest"></dxi-column>
+    <dxi-column  caption="End" dataField="endTime" editCellTemplate="cellNameet"></dxi-column>
+    <dxi-column  caption="Break Start" dataField="breakStartTime" editCellTemplate="cellNamebst"></dxi-column>
+    <dxi-column  caption="Break End" dataField="breakEndTime" editCellTemplate="cellNamebet"></dxi-column>
+    <dxi-column  caption="Day" dataField="dayShiftHours" cellTemplate="dh"></dxi-column>
+    <dxi-column  caption="Night" dataField="nightShiftHours" cellTemplate="nh"></dxi-column>
+    <dxi-column  caption="Weekend" dataField="weekendHours" cellTemplate="wh"></dxi-column>
+    <dxi-column  caption="Sunday" dataField="sundayHours" cellTemplate="sh"></dxi-column>
+    <dxi-column  caption="Public" dataField="publicHolidayHours" cellTemplate="ph"></dxi-column>
+
+    
+    <div *dxTemplate="let data of 'cellNamest'">
+      <dx-date-box 
+                   placeholder="Select Date and Time"
+                   type="datetime"
+                   [showClearButton]="true"
+                   [useMaskBehavior]="true"
+                   [(value)]="data.data.startTime"
+                   displayFormat="MM/dd/yyyy HH:mm"
+                   (onValueChanged)="calculate(data)">
+      </dx-date-box>
+  </div>
+    <div *dxTemplate="let data of 'cellNameet'">
+      <dx-date-box 
+                   placeholder="Select Date and Time"
+                   type="datetime"
+                   [showClearButton]="true"
+                   [useMaskBehavior]="true"
+                   [(value)]="data.data.endTime"
+                   displayFormat="MM/dd/yyyy HH:mm"
+                   (onValueChanged)="calculate(data)">
+      </dx-date-box>
+  </div>
+    <div *dxTemplate="let data of 'cellNamebst'">
+      <dx-date-box 
+                   placeholder="Select Date and Time"
+                   type="datetime"
+                   [showClearButton]="true"
+                   [useMaskBehavior]="true"
+                   [(value)]="data.data.breakStartTime"
+                   displayFormat="MM/dd/yyyy HH:mm"
+                   (onValueChanged)="calculate(data)">
+      </dx-date-box>
+  </div>
+    <div *dxTemplate="let data of 'cellNamebet'">
+      <dx-date-box 
+                   placeholder="Select Date and Time"
+                   type="datetime"
+                   [showClearButton]="true"
+                   [useMaskBehavior]="true"
+                   [(value)]="data.data.breakEndTime"
+                   displayFormat="MM/dd/yyyy HH:mm"
+                   (onValueChanged)="calculate(data)">
+      </dx-date-box>
+  </div>
+
+  <div *dxTemplate="let data of 'dh'">
+    <span>{{data.data.dayShiftHours/60}}</span>
+    </div>
+  <div *dxTemplate="let data of 'nh'">
+    <span>{{data.data.nightShiftHours/60}}</span>
+    </div>
+  <div *dxTemplate="let data of 'wh'">
+    <span>{{data.data.weekendHours/60}}</span>
+    </div>
+  <div *dxTemplate="let data of 'sh'">
+    <span>{{data.data.sundayHours/60}}</span>
+    </div>
+  <div *dxTemplate="let data of 'ph'">
+    <span>{{data.data.publicHolidayHours/60}}</span>
+    </div>
+</dx-data-grid>
+    </div>
+  </div>
+
+<div  style="display:flex; width:100%;">
+  
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:150px">Calculate Total Hours</div>
+    <dx-button id="button" 
+      height="28"
+      width="28"
+      icon="formula"
+      type="normal"
+      (onClick)="calculateTotal()">
+    </dx-button>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Day Shift Hours</div>
+    <div class="dx-field-value">
+      {{dayShiftHours/60}}
+    </div>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Night Shift Hours</div>
+    <div class="dx-field-value">
+      {{nightShiftHours/60}}
+    </div>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Weekend Hours</div>
+    <div class="dx-field-value">
+      {{weekendHours/60}}
+    </div>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Sunday Hours</div>
+    <div class="dx-field-value">
+      {{sundayHours/60}}
+    </div>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Public Holiday Hours</div>
+    <div class="dx-field-value">
+      {{publicHolidayHours/60}}
+    </div>
+  </div>
+  <div class="dx-field">
+    <div class="dx-field-label" style="width:130px;">Total Hours</div>
+    <div class="dx-field-value">
+      {{(dayShiftHours + nightShiftHours + weekendHours + sundayHours +publicHolidayHours)/60}}
+    </div>
+  </div>
+</div>
