@@ -1,0 +1,87 @@
+{
+  "configVersion": 1,
+  "timestamp": 1718739721116,
+  "index": "calc/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "calc/favicon.ico",
+        "calc/index.html",
+        "calc/main.c4c5adb1faa2870e.js",
+        "calc/manifest.webmanifest",
+        "calc/polyfills.4519700b2db432c0.js",
+        "calc/runtime.6578591c0b89ad8f.js",
+        "calc/styles.a7976e2fc83cbc35.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "calc/assets/icons/icon-128x128.png",
+        "calc/assets/icons/icon-144x144.png",
+        "calc/assets/icons/icon-152x152.png",
+        "calc/assets/icons/icon-192x192.png",
+        "calc/assets/icons/icon-384x384.png",
+        "calc/assets/icons/icon-512x512.png",
+        "calc/assets/icons/icon-72x72.png",
+        "calc/assets/icons/icon-96x96.png",
+        "calc/dxicons.138ec94494e3ed44.woff",
+        "calc/dxicons.c0eb758cc0063fa8.ttf",
+        "calc/dxicons.ce0b6d3ffa93b345.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "calc/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "calc/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "calc/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "calc/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "calc/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "calc/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "calc/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "calc/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "calc/dxicons.138ec94494e3ed44.woff": "223dd66ac8c16f5743240565a9235ea83e601ce8",
+    "calc/dxicons.c0eb758cc0063fa8.ttf": "9d7c15630ebfc867a5ed9fd25ca03bbdf0f47d2c",
+    "calc/dxicons.ce0b6d3ffa93b345.woff2": "513f00bc8afde44d690393cfca4c7133e0a572f6",
+    "calc/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "calc/index.html": "c60a7ba9741b56e34e8cfb5d2f54ee52b73d944e",
+    "calc/main.c4c5adb1faa2870e.js": "0e370b01792304d0d4aac92a40c9c29001b65adc",
+    "calc/manifest.webmanifest": "df94a18fbf88c69b2135ab3a0319776b76f5beee",
+    "calc/polyfills.4519700b2db432c0.js": "4e8d2b84d03b304d76326a31f11c0ea97fb8d2b7",
+    "calc/runtime.6578591c0b89ad8f.js": "cde0963fa0c8ead891ea44acd22490f3e60967eb",
+    "calc/styles.a7976e2fc83cbc35.css": "6e7dd861738cfe4a2e63c0c5ddd55c40f4616dfb"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
